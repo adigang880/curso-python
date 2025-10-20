@@ -1,6 +1,7 @@
 # curva_carga_residencial.py
 import matplotlib.pyplot as plt
 
+# TODO fazer isos epois 
 
 class Equipamento:
     def __init__(self, nome, pot_w, inicio_h, dur_h):
@@ -30,7 +31,8 @@ def plotar(h, p, titulo="Curva de carga (W)"):
     plt.show()
 
 
-def main():
+
+if __name__ == "__main__":
     eqs = []
     while True:
         nome = input("Nome do equipamento: ").strip()
@@ -45,11 +47,7 @@ def main():
 
     if not eqs:
         print("Nenhum equipamento informado.")
-        return
+    
 
     h, p = curva_total(eqs)
     plotar(h, p, "Curva de carga (W)")
-
-
-if __name__ == "__main__":
-    main()
